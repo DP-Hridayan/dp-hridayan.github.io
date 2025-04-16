@@ -147,7 +147,7 @@ h3 {
   vertical-align: center;
 }
 
-.dark-mode.cursor {
+.dark-mode .cursor {
   background-color: white;
 }
 
