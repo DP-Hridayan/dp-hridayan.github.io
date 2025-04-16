@@ -148,7 +148,13 @@ h3 {
 }
 
 .dark-mode .cursor {
-  background-color: white !important;
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: white;
+  margin-left: 2px;
+  animation: blink 0.7s steps(1) infinite;
+  vertical-align: center;
 }
 
 @keyframes blink {
