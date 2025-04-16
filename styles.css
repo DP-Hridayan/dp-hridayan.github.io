@@ -139,12 +139,16 @@ h3 {
 
 .cursor {
   display: inline-block;
-  width: 8px;
+  width: 3px;
   height: 1em;
   background-color: black;
   margin-left: 2px;
   animation: blink 0.7s steps(1) infinite;
-  vertical-align: bottom;
+  vertical-align: center;
+}
+
+.dark-mode.cursor {
+  background-color: white;
 }
 
 @keyframes blink {
