@@ -29,10 +29,7 @@ function typeEffect() {
     }
   }
 
-  const delay = isDeleting
-    ? Math.random() * (120 - 60) + 60
-    : Math.random() * (250 - 100) + 100;
-
+  const delay = isDeleting ? 60 : 100;
   setTimeout(typeEffect, delay);
 }
 
