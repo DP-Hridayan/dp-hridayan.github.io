@@ -2,6 +2,7 @@
 :root {
   --spacing: 1rem;
   --grid-gap: 1.5rem;
+  --margin-header: 3rem;
   --border-radius: 8px;
   --transition-speed: 0.3s;
   --accent-color: #007AFF;
@@ -53,6 +54,7 @@ body {
 h1 {
   font-size: 3rem;
   font-weight: 800;
+  margin-top: var(--margin-header);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
