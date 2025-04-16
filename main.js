@@ -1,16 +1,16 @@
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-const body = document.body;
-
-const setTheme = () => {
-    if (mediaQuery.matches) {
-        body.classList.add('dark-mode');
-    } else {
-        body.classList.remove('dark-mode');
-    }
-};
-
-mediaQuery.addListener(setTheme);
-setTheme();
+        const body = document.body;
+        
+        const setTheme = () => {
+            if (mediaQuery.matches) {
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+            }
+        };
+        
+        mediaQuery.addEventListener('change', setTheme);
+        setTheme();
 
 const quotes = [
     "Crafting Android apps with precision...",
