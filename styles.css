@@ -1,131 +1,213 @@
 /* General Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
+:root {
+  --spacing: 1rem;
+  --grid-gap: 1.5rem;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --accent-color: #007AFF;
+  --bg-color: #1A1A1A;
+  --text-color: #FFFFFF;
+  --card-bg: #2A2A2A;
+  --card-hover: #3A3A3A;
+  --tag-bg: #3A3A3A;
+  --icon-color: #007AFF;
+}
+
+[data-theme="light"] {
+  --bg-color: #FFFFFF;
+  --text-color: #1A1A1A;
+  --card-bg: #F5F5F5;
+  --card-hover: #EEEEEE;
+  --tag-bg: #EEEEEE;
+  --icon-color: #007AFF;
+}
+
+* {
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: #eaeaea;
-}
-
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 50px;
-}
-
-h2 {
-  font-size: 2rem;
-  margin: 30px 0;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.25rem;
-  margin-bottom: 15px;
-  font-weight: 500;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+  margin: 0 auto;
+  padding: 2rem var(--spacing);
+  width: 100%;
 }
 
 .section {
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
+  animation: fadeIn 0.5s ease-out;
 }
 
-.badges, .socials {
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
 
-.badges img, .socials img {
+.badges img {
   height: 28px;
-  object-fit: contain;
-  border-radius: 4px;
+  transition: transform var(--transition-speed);
 }
 
-.socials img {
-  height: 34px;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  color: inherit;
-  text-decoration: none;
-  flex: 1 1 calc(33.33% - 30px);
-  margin: 15px;
-  overflow: hidden;
-}
-
-.dark-mode .card {
-  background-color: #333;
-  color: #eaeaea;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 3px solid #ddd;
-}
-
-.card-body {
-  padding: 20px;
-  text-align: center;
-}
-
-.card p {
-  color: #555;
-}
-
-.dark-mode .card p {
-  color: #ddd;
+.badges img:hover {
+  transform: translateY(-2px);
 }
 
 .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--grid-gap);
+  margin-bottom: 2rem;
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-body {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: background-color var(--transition-speed);
+  display: flex;
+  gap: 1rem;
+}
+
+.card:hover .card-body {
+  background-color: var(--card-hover);
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: var(--icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  background-color: rgba(0, 122, 255, 0.1);
+  border-radius: var(--border-radius);
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-.row > .card {
-  flex: 1 1 calc(30% - 30px);
+.tag {
+  background-color: var(--tag-bg);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .row > .card {
-    flex: 1 1 100%;
-  }
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-@keyframes fadeInUp {
+.socials img {
+  height: 28px;
+  transition: transform var(--transition-speed);
+}
+
+.socials img:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-speed);
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  background-color: var(--card-bg);
+}
+
+.theme-toggle i {
+  position: absolute;
+  transition: opacity var(--transition-speed);
+}
+
+.theme-toggle i:last-child {
+  opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle i:first-child {
+  opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle i:last-child {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -133,25 +215,54 @@ h3 {
   }
 }
 
-.fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .theme-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
 }
 
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background-color: black;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-  vertical-align: center;
-}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
 
-.dark-mode .cursor {
-  background-color: white;
-}
+  h2 {
+    font-size: 1.5rem;
+  }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  .badges img,
+  .socials img {
+    height: 24px;
+  }
 }
