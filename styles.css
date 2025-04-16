@@ -268,3 +268,18 @@ h3 {
     height: 24px;
   }
 }
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: var(--text-color);
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+  vertical-align: center;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
