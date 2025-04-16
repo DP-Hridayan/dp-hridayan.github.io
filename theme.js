@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
+  const root = document.documentElement;
   const themeToggle = document.querySelector('.theme-toggle');
   const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
 
   const setTheme = (theme) => {
-    body.setAttribute('data-theme', theme);
+    root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   };
 
@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   themeToggle.addEventListener('click', () => {
-    setTheme(body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+    const current = root.getAttribute('data-theme');
+    const nextTheme = current === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
   });
 
   mediaQuery.addEventListener('change', (e) => {
