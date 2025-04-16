@@ -141,7 +141,7 @@ h3 {
   display: inline-block;
   width: 3px;
   height: 1em;
-  background-color: black;
+  background-color: white;
   margin-left: 2px;
   animation: blink 0.7s steps(1) infinite;
   vertical-align: center;
