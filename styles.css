@@ -14,7 +14,7 @@
   --icon-color: #007AFF;
 }
 
-.light-mode {
+[data-theme="light"] {
   --bg-color: #FFFFFF;
   --text-color: #1A1A1A;
   --card-bg: #F5F5F5;
