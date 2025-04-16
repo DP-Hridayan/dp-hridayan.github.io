@@ -1,25 +1,39 @@
 const quotes = [
-    "Crafting Android apps with precision...",
-    "Lover of clean code and Material Design...",
-    "Jetpack Compose is my playground..."
+  "Crafting Android apps with precision...",
+  "Lover of clean code and Material Design...",
+  "Jetpack Compose is my playground..."
 ];
 
 let currentIndex = 0;
 let charIndex = 0;
+let isDeleting = false;
 const typingText = document.getElementById("typing-text");
 
-function typeQuote() {
-    if (charIndex < quotes[currentIndex].length) {
-        typingText.textContent += quotes[currentIndex][charIndex++];
-        setTimeout(typeQuote, 60);
-    } else {
-        setTimeout(() => {
-            typingText.textContent = "";
-            charIndex = 0;
-            currentIndex = (currentIndex + 1) % quotes.length;
-            typeQuote();
-        }, 2500);
+function typeEffect() {
+  const fullText = quotes[currentIndex];
+
+  if (!isDeleting) {
+    typingText.textContent = fullText.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === fullText.length) {
+      isDeleting = true;
+      return setTimeout(typeEffect, 1500);
     }
+  } else {
+    typingText.textContent = fullText.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      isDeleting = false;
+      currentIndex = (currentIndex + 1) % quotes.length;
+      return setTimeout(typeEffect, 500);
+    }
+  }
+
+  const delay = isDeleting
+    ? Math.random() * (120 - 60) + 60
+    : Math.random() * (250 - 100) + 100;
+
+  setTimeout(typeEffect, delay);
 }
 
-typeQuote();
+typeEffect();
