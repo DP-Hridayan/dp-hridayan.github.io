@@ -168,6 +168,24 @@
             }
         }
     </style>
+
+<style>
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    background-color: black;
+    margin-left: 2px;
+    animation: blink 0.7s steps(1) infinite;
+    vertical-align: bottom;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+    
 </head>
 <body>
     <div class="container">
@@ -228,8 +246,10 @@
 
         <!-- Quote Section -->
         <div class="section fade-in-up">
-            <p style="font-style: italic; text-align: center;">"Code is like humor. When you have to explain it, it’s bad."</p>
-        </div>
+  <p style="font-style: italic; text-align: center;">
+    <span id="typing-text"></span><span class="cursor"></span>
+  </p>
+</div>
 
         <!-- Footer -->
         <div class="section fade-in-up">
@@ -254,5 +274,40 @@
         mediaQuery.addEventListener('change', setTheme);
         setTheme(); // Set the theme on page load
     </script>
+
+    <script>
+  const text = `"Code is like humor. When you have to explain it, it’s bad."`;
+  const typingText = document.getElementById("typing-text");
+
+  let index = 0;
+  let typing = true;
+
+  function typeEffect() {
+    if (typing) {
+      if (index < text.length) {
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 70); // Typing speed
+      } else {
+        typing = false;
+        setTimeout(typeEffect, 1200); // Wait before deleting
+      }
+    } else {
+      if (index > 0) {
+        typingText.textContent = text.substring(0, index - 1);
+        index--;
+        setTimeout(typeEffect, 50); // Backspace speed
+      } else {
+        typing = true;
+        setTimeout(typeEffect, 800); // Wait before retyping
+      }
+    }
+  }
+
+  window.addEventListener("load", () => {
+    setTimeout(typeEffect, 500); // Start delay
+  });
+    </script>
+    
 </body>
 </html>
