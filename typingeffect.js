@@ -1,7 +1,7 @@
 const quotes = [
-  "Crafting Android apps with precision...",
-  "Lover of clean code and Material Design...",
-  "Jetpack Compose is my playground..."
+  "Just a guy who loves apps and design...",
+  "Mastering jetpack compose bit by bit...",
+  "Designing with Material You..."
 ];
 
 let currentIndex = 0;
