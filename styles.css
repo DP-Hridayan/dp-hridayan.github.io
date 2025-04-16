@@ -147,14 +147,8 @@ h3 {
   vertical-align: center;
 }
 
-/* Stronger selector to override anything */
-body.dark-mode .cursor {
-  background-color: white !important;
-}
-
-/* Just to be safe: force black back in light mode */
-body:not(.dark-mode) .cursor {
-  background-color: black !important;
+.dark-mode .cursor {
+  background-color: white;
 }
 
 @keyframes blink {
