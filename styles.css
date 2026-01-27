@@ -532,11 +532,28 @@ section {
 
 .project-tag {
     background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
     padding: 0.35rem 0.8rem;
     border-radius: 20px;
     font-size: 0.75rem;
     color: var(--text-muted);
     font-weight: 500;
+}
+
+/* GitHub icon - invert in dark mode since DevIcons version is black */
+.github-icon {
+    filter: invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+    .github-icon {
+        filter: invert(0);
+    }
+
+    .project-tag {
+        background: #e9ecef;
+        border-color: #dee2e6;
+    }
 }
 
 .project-stats {
