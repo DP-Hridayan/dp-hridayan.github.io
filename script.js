@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initScrollReveal() {
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -41,7 +41,7 @@ function initScrollReveal() {
 function initMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    
+
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -63,16 +63,16 @@ function initMobileMenu() {
  */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 const navbarHeight = document.getElementById('navbar').offsetHeight;
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -87,13 +87,13 @@ function initSmoothScroll() {
  */
 function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
-    
+
     if (navbar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+                navbar.style.background = 'var(--navbar-bg-scroll)';
             } else {
-                navbar.style.background = 'rgba(10, 10, 15, 0.8)';
+                navbar.style.background = 'var(--navbar-bg)';
             }
         });
     }

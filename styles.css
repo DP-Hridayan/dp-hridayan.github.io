@@ -11,9 +11,9 @@
     box-sizing: border-box;
 }
 
-/* --- Root Variables (Design Tokens) --- */
+/* --- Root Variables (Design Tokens) - Dark Mode Default --- */
 :root {
-    /* Colors - Calm, Professional Palette */
+    /* Colors - Dark Theme (Default) */
     --bg-primary: #0a0a0f;
     --bg-secondary: #12121a;
     --bg-card: #1a1a24;
@@ -29,6 +29,21 @@
 
     --border-subtle: rgba(255, 255, 255, 0.06);
     --border-accent: rgba(100, 255, 218, 0.3);
+
+    /* Navbar */
+    --navbar-bg: rgba(10, 10, 15, 0.8);
+    --navbar-bg-scroll: rgba(10, 10, 15, 0.95);
+
+    /* Shadows */
+    --shadow-card: rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: rgba(0, 0, 0, 0.4);
+
+    /* Special elements */
+    --scrollbar-track: #0a0a0f;
+    --scrollbar-thumb: #1a1a24;
+    --scrollbar-thumb-hover: #6a6a7a;
+    --selection-bg: #64ffda;
+    --selection-text: #0a0a0f;
 
     /* Typography */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -46,6 +61,43 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
+}
+
+/* --- Light Mode Override --- */
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Colors - Light Theme */
+        --bg-primary: #f8f9fa;
+        --bg-secondary: #ffffff;
+        --bg-card: #ffffff;
+        --bg-card-hover: #f0f2f5;
+
+        --text-primary: #1a1a2e;
+        --text-secondary: #4a4a5a;
+        --text-muted: #6c757d;
+
+        --accent-primary: #00897b;
+        --accent-secondary: #5e35b1;
+        --accent-glow: rgba(0, 137, 123, 0.1);
+
+        --border-subtle: rgba(0, 0, 0, 0.08);
+        --border-accent: rgba(0, 137, 123, 0.3);
+
+        /* Navbar */
+        --navbar-bg: rgba(248, 249, 250, 0.9);
+        --navbar-bg-scroll: rgba(248, 249, 250, 0.98);
+
+        /* Shadows */
+        --shadow-card: rgba(0, 0, 0, 0.08);
+        --shadow-card-hover: rgba(0, 0, 0, 0.12);
+
+        /* Special elements */
+        --scrollbar-track: #f8f9fa;
+        --scrollbar-thumb: #d1d5db;
+        --scrollbar-thumb-hover: #9ca3af;
+        --selection-bg: #00897b;
+        --selection-text: #ffffff;
+    }
 }
 
 /* --- Base Styles --- */
@@ -124,7 +176,7 @@ section {
     right: 0;
     z-index: 1000;
     padding: 1rem 0;
-    background: rgba(10, 10, 15, 0.8);
+    background: var(--navbar-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border-bottom: 1px solid var(--border-subtle);
@@ -712,6 +764,6 @@ section {
 
 /* --- Selection --- */
 ::selection {
-    background: var(--accent-primary);
-    color: var(--bg-primary);
+    background: var(--selection-bg);
+    color: var(--selection-text);
 }
