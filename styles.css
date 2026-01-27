@@ -551,8 +551,9 @@ section {
     }
 
     .project-tag {
-        background: #e9ecef;
-        border-color: #dee2e6;
+        background: #d1d5db;
+        border-color: #c2c7cc;
+        color: #374151;
     }
 }
 
