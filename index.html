@@ -1,118 +1,244 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hridayan's Developer Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-    <link rel="stylesheet" href="styles.css?v=8"/>
-</head>
-<body>
-    <div class="container">
-        <div class="section">
-            <h1>Hey, I'm Hridayan</h1>
-            <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem;">An Android Developer with a passion for design and clean code. Building apps with Jetpack Compose and Material Design!</p>
-        </div>
 
-        <div class="section">
-            <h2>Tech I Use</h2>
-            <div class="badges">
-                <img alt="Java" src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white"/>
-                <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-%23B125E3.svg?style=for-the-badge&logo=kotlin&logoColor=white"/>
-                <img alt="Android" src="https://img.shields.io/badge/Android-%233DDC84.svg?style=for-the-badge&logo=android&logoColor=white"/>
-                <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-%23007ACC.svg?style=for-the-badge&logo=jetpackcompose&logoColor=white"/>
-                <img alt="Material Design" src="https://img.shields.io/badge/Material%20Design-757575?style=for-the-badge&logo=material-design&logoColor=white"/>
-                <img alt="Dagger Hilt" src="https://img.shields.io/badge/Dagger%20Hilt-%236200EE.svg?style=for-the-badge&logo=dagger&logoColor=white"/>
-                <img alt="Room" src="https://img.shields.io/badge/Room-3F51B5?style=for-the-badge&logo=sqlite&logoColor=white"/>
-                <img alt="Gradle" src="https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"/>
-                <img alt="GitHub" src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+    <!-- SEO Meta Tags -->
+    <title>Hridayan | Android Developer & UI Designer</title>
+    <meta name="description"
+        content="Android Developer passionate about building apps with great design using Jetpack Compose & Material You. Creator of aShellYou and Driftly.">
+    <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, Material Design, UI Designer">
+    <meta name="author" content="Hridayan">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hridayan | Android Developer">
+    <meta property="og:description" content="Android Developer passionate about building apps with great design.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">Hridayan</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </nav>
 
-        <div class="section">
-            <h2>Featured Projects</h2>
-            <div class="row">
-                <a href="https://github.com/dp-hridayan/ashellyou" class="card">
-                    <div class="card-body">
-                        <div class="card-icon">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle reveal">Hey there, I'm</p>
+                <h1 class="hero-title reveal reveal-delay-1">Hridayan</h1>
+                <p class="hero-tagline reveal reveal-delay-2">
+                    An <strong>Android Developer</strong> with a passion for design and clean code.
+                    Building apps with <strong>Jetpack Compose</strong> and <strong>Material You</strong>.
+                </p>
+                <div class="hero-cta reveal reveal-delay-3">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="ri-folder-3-line"></i> View Projects
+                    </a>
+                    <a href="https://github.com/DP-Hridayan" target="_blank" class="btn btn-outline">
+                        <i class="ri-github-line"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-glow"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-card reveal reveal-delay-1">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm passionate about building Android apps with great design. Currently learning
+                            Jetpack Compose & Material You while exploring sandboxing, OTG-based ADB, and
+                            rootless systems.
+                        </p>
+                        <p>
+                            I started my developer journey entirely with my phone — fueled by Java, Kotlin,
+                            and sometimes chai ☕.
+                        </p>
+                        <div class="about-highlights">
+                            <span class="highlight-tag">🚀 Open Source Enthusiast</span>
+                            <span class="highlight-tag">🎨 UI/UX Designer</span>
+                            <span class="highlight-tag">📱 Mobile Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="quote">
+                    "Code is like humor. When you have to explain it, it's bad."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-item reveal">
+                    <img src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="Kotlin" class="skill-icon">
+                    <span>Kotlin</span>
+                </div>
+                <div class="skill-item reveal reveal-delay-1">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                        class="skill-icon">
+                    <span>Java</span>
+                </div>
+                <div class="skill-item reveal reveal-delay-2">
+                    <img src="https://cdn.simpleicons.org/android/3DDC84" alt="Android" class="skill-icon">
+                    <span>Android</span>
+                </div>
+                <div class="skill-item reveal">
+                    <img src="https://cdn.simpleicons.org/jetpackcompose/4285F4" alt="Jetpack Compose"
+                        class="skill-icon">
+                    <span>Compose</span>
+                </div>
+                <div class="skill-item reveal reveal-delay-1">
+                    <img src="https://cdn.simpleicons.org/materialdesign/757575" alt="Material Design"
+                        class="skill-icon">
+                    <span>Material You</span>
+                </div>
+                <div class="skill-item reveal reveal-delay-2">
+                    <img src="https://cdn.simpleicons.org/sqlite/003B57" alt="Room DB" class="skill-icon">
+                    <span>Room DB</span>
+                </div>
+                <div class="skill-item reveal">
+                    <i class="ri-syringe-line skill-icon-fallback"></i>
+                    <span>Dagger Hilt</span>
+                </div>
+                <div class="skill-item reveal reveal-delay-1">
+                    <img src="https://cdn.simpleicons.org/gradle/02303A" alt="Gradle" class="skill-icon">
+                    <span>Gradle</span>
+                </div>
+                <div class="skill-item reveal reveal-delay-2">
+                    <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" class="skill-icon">
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- aShellYou -->
+                <a href="https://github.com/DP-Hridayan/aShellYou" target="_blank" class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon">
                             <i class="ri-terminal-box-line"></i>
                         </div>
-                        <div class="card-content">
-                            <h3>Ashellyou</h3>
-                            <p>Run ADB commands on your Android device without a PC</p>
-                            <div class="card-tags">
-                                <span class="tag">Android</span>
-                                <span class="tag">ADB</span>
-                                <span class="tag">Java</span>
-                            </div>
-                        </div>
+                        <h3 class="project-title">aShellYou</h3>
+                    </div>
+                    <p class="project-description">
+                        A Material You designed app for running ADB commands directly on your Android device without
+                        needing a PC. Features wireless debugging, OTG support, and more.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Android</span>
+                        <span class="project-tag">Kotlin</span>
+                        <span class="project-tag">Jetpack Compose</span>
+                        <span class="project-tag">ADB</span>
+                    </div>
+                    <div class="project-stats">
+                        <span><i class="ri-star-line"></i> 1.5k+</span>
+                        <span><i class="ri-git-branch-line"></i> 69</span>
                     </div>
                 </a>
-                <a href="https://github.com/dp-hridayan/driftly" class="card">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="ri-code-box-line"></i>
+
+                <!-- Driftly -->
+                <a href="https://github.com/DP-Hridayan/Driftly" target="_blank"
+                    class="project-card reveal reveal-delay-1">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="ri-calendar-check-line"></i>
                         </div>
-                        <div class="card-content">
-                            <h3>Driftly</h3>
-                            <p>An Attendance Tracker app</p>
-                            <div class="card-tags">
-                                <span class="tag">Android</span>
-                                <span class="tag">Jetpack Compose</span>
-                                <span class="tag">Kotlin</span>
-                            </div>
-                        </div>
+                        <h3 class="project-title">Driftly</h3>
                     </div>
-                </a>
-                <a href="https://github.com/dp-hridayan/xmlforge" class="card">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="ri-code-box-line"></i>
-                        </div>
-                        <div class="card-content">
-                            <h3>XMLForge</h3>
-                            <p>An Android app to format layout XML files</p>
-                            <div class="card-tags">
-                                <span class="tag">Android</span>
-                                <span class="tag">XML</span>
-                                <span class="tag">Java</span>
-                            </div>
-                        </div>
+                    <p class="project-description">
+                        A beautiful attendance tracking app built with Jetpack Compose. Helps students monitor their
+                        attendance percentage and manage schedules effectively.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Android</span>
+                        <span class="project-tag">Kotlin</span>
+                        <span class="project-tag">Jetpack Compose</span>
+                    </div>
+                    <div class="project-stats">
+                        <span><i class="ri-star-line"></i> 110+</span>
+                        <span><i class="ri-git-branch-line"></i> 5</span>
                     </div>
                 </a>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>Contact me</h2>
-            <div class="socials">
-                <a href="https://github.com/dp-hridayan" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub_Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-                </a>
-                <a href="mailto:hridayanofficial@gmail.com">
-                    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-                </a>
-                <a href="https://t.me/hridayan" target="_blank">
-                    <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
-                </a>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <div class="contact-content reveal reveal-delay-1">
+                <p class="contact-text">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to collaborate.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/DP-Hridayan" target="_blank" class="social-link">
+                        <i class="ri-github-line"></i> GitHub
+                    </a>
+                    <a href="mailto:hridayanofficial@gmail.com" class="social-link">
+                        <i class="ri-mail-line"></i> Email
+                    </a>
+                    <a href="https://t.me/hridayan" target="_blank" class="social-link">
+                        <i class="ri-telegram-line"></i> Telegram
+                    </a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <p style="font-style: italic; max-width: 600px;">
-                <span id="typing-text"></span><span class="cursor"></span>
-            </p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Built with <span class="heart">❤</span> by Hridayan</p>
+            <p>© 2025 Hridayan. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="section">
-            <p style="font-size: 0.9rem;">Built with ❤️ by Hridayan</p>
-            <p style="font-size: 0.9rem;">© 2025 Hridayan. All rights reserved</p>
-        </div>
-    </div>
-    
-    <script src="typingeffect.js?v=7"></script>
-    <script src="theme.js?v=9"></script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
+
 </html>
